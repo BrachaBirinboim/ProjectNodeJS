@@ -9,8 +9,16 @@ export default class RequestApi {
     }
 
     public setRoutes(){
-        this.router.get("/", (req: Request, res: Response) => {
+        this.router.get("", (req: Request, res: Response) => {
             res.send(this.service.GetAllRequests());
+        });
+
+        this.router.get("/help-requests", (req: Request, res: Response) => {
+            const filter = {
+                location:req.query.location,
+                priority:req.query.priority
+            }
+            res.send(this.service.GetUnAnsweredRequests(filter));
         });
 
         this.router.get("/:id", (req: Request, res: Response) => {

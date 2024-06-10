@@ -13,7 +13,7 @@ export type HelpRequest = {
     location: string;
     status: string;
     priority: string;
-    volunteerId: string;
+    volunteerId: number;
 }
 
 
