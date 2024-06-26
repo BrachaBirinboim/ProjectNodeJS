@@ -1,3 +1,5 @@
-# ProjectNodeJS
-volunteer coordination System, that provides a central framework for managing and tracking donations and contributors through an API for matching services.
-The application is built using Node.js and TypeScript
+# Donation Management Framework-ProjectNodeJS
+The system provides matching services between volunteers and volunteer seekers via an API.
+#The application was built using Node.js and TypeScript."
+
+א
