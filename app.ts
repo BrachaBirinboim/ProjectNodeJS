@@ -3,6 +3,9 @@ import VolenteerService from './Volenteers/service';
 import VolenteerApi from './Volenteers/api';
 import RequestService from './Requests/service';
 import RequestApi from './Requests/api';
+import connectDB from './db';
+
+connectDB();
 
 const HOST = "localhost";
 
@@ -16,11 +19,11 @@ const requestService = new RequestService();
 const requestApi = new RequestApi(requestService);
 requestApi.setRoutes();
 
-const volenteerService = new VolenteerService(requestService);
+const volenteerService = new VolenteerService();
 const volenteerApi = new VolenteerApi(volenteerService);
 volenteerApi.setRoutes();
 
-app.use('/api/volenteers',volenteerApi.router)
+app.use('/api/volunteers',volenteerApi.router)
 app.use('/api/requests',requestApi.router)
 
 app.listen(PORT, HOST, () => {
